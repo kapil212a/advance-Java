@@ -32,6 +32,13 @@ public class Hashing {
 
         //size of HashMap
         System.out.println(hm.size());
+
+        //isEmpty operatin  
+        System.out.println(hm.isEmpty());
+
+        //clear opertaion 
+        hm.clear();
+        System.out.println(hm);
     }
     
     
