@@ -8,6 +8,6 @@ public class Treemap {
         tm.put("china" , 150);
         tm.put("us" , 50);
         tm.put("pakistan" , 10);
-        System.out.println(tm);
+        System.out.println(tm);                     // Always store key in sorted manner
     }
 }
