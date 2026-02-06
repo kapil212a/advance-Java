@@ -12,7 +12,7 @@ public class addll {
     }
     public static Node head;
     public static Node tail;
-    public static void addfirst(int data){
+    public static void addfirst(int data){                    // adding of element in linked list
         Node newNode = new Node(data);
         if(head == null){
             head = tail = newNode;
