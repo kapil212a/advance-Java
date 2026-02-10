@@ -32,7 +32,13 @@ public class addll {
             tail = newNode;
         }
 
-        
+        public static void printLL(Node head){
+            Node temp = head;
+            while(temp != null){
+                System.out.println(temp.data);
+                head = temp.next;
+            }
+        }
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
