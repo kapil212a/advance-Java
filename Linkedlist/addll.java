@@ -22,9 +22,25 @@ public class addll {
         newNode.next = head;
         head = newNode;
     }
+
+        public static void addlast(int data){                   //adding element in the last of the linked list
+            Node newNode = new Node(data);
+            if(head == null){
+                head = tail = newNode;
+            }
+            tail.next = newNode;
+            tail = newNode;
+        }
+
+        
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
         ll.addFirst(2);
+
+        ll.addLast(3);
+        ll.addLast(4);
     }
+
 }
