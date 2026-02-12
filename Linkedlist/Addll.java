@@ -46,17 +46,33 @@ public class Addll {
         System.out.println("null");
     }
 
+    public static void addMid(Node head ,int data, int idx){
+        Node temp = head;
+        int i =0;
+        Node newNode = new Node(data);
+        while(i < idx-1 ){
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+    }
+
     public static void main(String[] args) {
         Addll ll = new Addll();
-        ll.print(head);
         ll.addfirst(2);
-        ll.print(head);
         ll.addfirst(1);
-        ll.print(head);
+
         ll.addlast(3);
-        ll.print(head);
         ll.addlast(4);
+
         ll.print(head);
+
+        ll.addMid(head, 5, 2);
+        ll.print(head);
+
+
     }
 
 }
