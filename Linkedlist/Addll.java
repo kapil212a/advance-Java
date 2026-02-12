@@ -46,7 +46,7 @@ public class Addll {
         System.out.println("null");
     }
 
-    public static void addMid(Node head ,int data, int idx){
+    public static void addMid(Node head ,int data, int idx){          // Adding Element in the last of linked list
         Node temp = head;
         int i =0;
         Node newNode = new Node(data);
@@ -58,6 +58,8 @@ public class Addll {
         temp.next = newNode;
 
     }
+
+    
 
     public static void main(String[] args) {
         Addll ll = new Addll();
