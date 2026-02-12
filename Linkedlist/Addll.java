@@ -47,6 +47,10 @@ public class Addll {
     }
 
     public static void addMid(Node head ,int data, int idx){          // Adding Element in the last of linked list
+        if(idx == 0){
+            addfirst(data);
+            return;
+        }
         Node temp = head;
         int i =0;
         Node newNode = new Node(data);
