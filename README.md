@@ -1,1 +1,3 @@
-# advance-Java
+# advance-Java 
+# Hashing
+# LinkedList

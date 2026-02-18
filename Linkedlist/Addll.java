@@ -141,6 +141,7 @@ public class Addll {
         ll.removeLast();
         ll.print();
 
+        System.out.println(ll.searchKey(4));
 
 
     }
