@@ -36,7 +36,7 @@ public class Addll {
         tail = newNode;
     }
 
-    public static void print(Node head){                  //printing linkedlist
+    public static void print(){                  //printing linkedlist
         Node temp = head;
         if(temp == null){
             System.out.println("ll is empty");
@@ -67,7 +67,7 @@ public class Addll {
 
     }
 
-    public static int removeFirst(Node head){
+    public static int removeFirst(){
         if(size == 0){
             System.out.println(" ll is empty");
             return Integer.MIN_VALUE;
@@ -84,6 +84,27 @@ public class Addll {
 
     }
 
+    public static int removeLast(){
+        if(size == 0){
+            System.out.println("LL is empty");
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        Node prev = head;
+        for(int i=0; i<size-2; i++){
+            prev = prev.next;
+        }
+        int val = prev.next.data;
+        prev.next = null;
+        tail  = prev;
+        return val;
+
+    }
+
     
 
     public static void main(String[] args) {
@@ -91,21 +112,21 @@ public class Addll {
         ll.addfirst(2);
         ll.addfirst(1);
 
-        ll.addlast(3);
         ll.addlast(4);
+        ll.addlast(5);
 
-        ll.print(head);
+        ll.print();
 
-        ll.addMid(head, 5, 2);
-        ll.print(head);
+        ll.addMid(head, 3, 2);
+        ll.print();
         System.out.println(ll.size);
 
-        ll.removeFirst(head);
+        ll.removeFirst();
+        ll.print();
         System.out.println(ll.size);
-        ll.print(head);
-        ll.removeFirst(head);
-        ll.print(head);
-        System.out.println(ll.size);
+
+        ll.removeLast();
+        ll.print();
 
 
 
