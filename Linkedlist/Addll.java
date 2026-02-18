@@ -13,8 +13,10 @@ public class Addll {
     
     public static Node head;
     public static Node tail;
+    public static int size;
     public static void addfirst(int data){                    // adding of element in linked list
         Node newNode = new Node(data);
+        size++;
         if(head == null){
             head = tail = newNode;
             return;
@@ -26,6 +28,7 @@ public class Addll {
 
     public static void addlast(int data){                   //adding element in the last of the linked list
         Node newNode = new Node(data);
+        size++;
         if(head == null){
             head = tail = newNode;
         }
@@ -54,12 +57,30 @@ public class Addll {
         Node temp = head;
         int i =0;
         Node newNode = new Node(data);
+        size++;
         while(i < idx-1 ){
             temp = temp.next;
             i++;
         }
         newNode.next = temp.next;
         temp.next = newNode;
+
+    }
+
+    public static int removeFirst(Node head){
+        if(size == 0){
+            System.out.println(" ll is empty");
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
 
     }
 
@@ -77,6 +98,15 @@ public class Addll {
 
         ll.addMid(head, 5, 2);
         ll.print(head);
+        System.out.println(ll.size);
+
+        ll.removeFirst(head);
+        System.out.println(ll.size);
+        ll.print(head);
+        ll.removeFirst(head);
+        ll.print(head);
+        System.out.println(ll.size);
+
 
 
     }
