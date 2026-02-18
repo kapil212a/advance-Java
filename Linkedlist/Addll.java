@@ -105,6 +105,19 @@ public class Addll {
 
     }
 
+    public static int searchKey(int key){
+        Node temp = head;
+        int pos = 0;
+        while(temp != null){
+            if(temp.data == key){
+                return pos;
+            }
+            temp = temp.next;
+            pos++;
+        }
+        return -1;
+    }
+
     
 
     public static void main(String[] args) {
