@@ -118,30 +118,78 @@ public class Addll {
         return -1;
     }
 
+    public static int helper(Node head , int key){
+        if(head == null){
+            return -1;
+        }
+        if(head.data == key){
+            return 0;
+        }
+        int idx = helper(head.next, key);
+        if(idx == -1){
+            return -1;
+        }
+        return idx + 1;
+    }
+
+    public static int recorsiveSearch(int key){
+        return helper(head , key);
+    }
+
+    public static void reverseLL(){
+        Node curr = head , prev = null , next;
+        while(curr != null){
+            next = curr.next;
+            curr.next  = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+
     
 
     public static void main(String[] args) {
         Addll ll = new Addll();
+        // ll.addfirst(3);
+        // ll.addfirst(1);
+        // ll.addfirst(0);
+
+        // ll.addlast(4);
+        // ll.addlast(5);
+        // ll.addlast(6);
+        // ll.addlast(7);
+
+        // ll.print();
+
+        // ll.addMid(head, 2, 2);
+        // ll.print();
+        // System.out.println(ll.size);
+
+        // ll.removeFirst();
+        // ll.print();
+        // System.out.println(ll.size);
+
+        // ll.removeLast();
+        // ll.print();
+
+        // System.out.println(ll.searchKey(4));
+
+        // System.out.println(ll.recorsiveSearch(3));
+
+        // ll.reverseLL();
+        // ll.print(); 
+
+        // ll.deletefmEnd(6);
+        // ll.print();
+
+        ll.addfirst(1);
+        ll.addfirst(2);
         ll.addfirst(2);
         ll.addfirst(1);
-
-        ll.addlast(4);
-        ll.addlast(5);
-
         ll.print();
-
-        ll.addMid(head, 3, 2);
-        ll.print();
-        System.out.println(ll.size);
-
-        ll.removeFirst();
-        ll.print();
-        System.out.println(ll.size);
-
-        ll.removeLast();
-        ll.print();
-
-        System.out.println(ll.searchKey(4));
+        System.out.println(ll.checkPalindrom());
 
 
     }
