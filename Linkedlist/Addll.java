@@ -147,6 +147,36 @@ public class Addll {
         head = prev;
     }
 
+    public static void deletefmEnd(int idx){
+        int sz = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            sz++;
+        }
+        int i=1;
+        int nth = sz - idx;
+        Node prev = head;
+        while(i<nth){
+            prev = prev.next;
+            i++;
+
+        }
+        prev.next = prev.next.next;
+        return;
+
+    }
+
+    public static Node findMid(Node head){
+        Node slow = head , fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+ 
 
     
 
