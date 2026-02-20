@@ -157,7 +157,7 @@ public class Addll {
         int i=1;
         int nth = sz - idx;
         Node prev = head;
-        while(i<nth){
+        while(i < nth){
             prev = prev.next;
             i++;
 
@@ -201,9 +201,22 @@ public class Addll {
             left = left.next;
         }
         return true;
-   
-   } 
+    } 
 
+    public static boolean detectCycle(){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
     
 
     public static void main(String[] args) {
@@ -240,13 +253,21 @@ public class Addll {
         // ll.deletefmEnd(6);
         // ll.print();
 
-        ll.addfirst(1);
-        ll.addfirst(2);
-        ll.addfirst(2);
-        ll.addfirst(1);
-        ll.print();
-        System.out.println(ll.checkPalindrom());
+        // ll.addfirst(1);
+        // ll.addfirst(2);
+        // ll.addfirst(2);
+        // ll.addfirst(1);
+        // ll.print();
+        // System.out.println(ll.checkPalindrom());
 
+        head = new Node(1);
+        Node temp = new Node(2);
+        head.next = temp;
+        head.next.next = new Node(3);
+        head.next.next.next = temp;
+        System.out.println(detectCycle());
+        removeCycle();
+        System.out.println(detectCycle());
 
     }
 
